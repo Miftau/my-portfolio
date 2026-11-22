@@ -1,15 +1,35 @@
-# vCard - Personal portfolio
+# Yusuf Muftaudeen (Dev. Progress) — Personal Portfolio
 
-## Run this website
+A modern personal portfolio built with **Next.js (App Router)** and **TypeScript**, showcasing recent production SaaS platforms, AI labs, mobile apps, and web engineering projects.
 
-Hit **Run** up there, or just hit `Cmd + ENTER`!
+## Tech Stack
 
-You can customize it. Start from `index.html`.
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript & React 19
+- **Icons:** Lucide React
+- **Typography:** Poppins via `next/font/google`
 
-## Author & License
+## Getting Started
 
-This template has been developed by [@codewithsadee](https://www.twitter.com/codewithsadee). If you want to contact the author, you can reach out on [Twitter](https://www.twitter.com/codewithsadee). 
+Install dependencies and start the development server:
 
-Donations: [Patreon](https://patreon.com/codewithsadee).
+```bash
+npm install
+npm run dev
+```
 
-License: MIT (see LICENSE file).
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio locally.
+
+## Production Build
+
+```bash
+npm run build
+npm run start
+```
+
+## Project Structure
+
+- `src/app/` — Next.js App Router layout, global stylesheet, and home route
+- `src/components/` — Modular UI components (`Sidebar`, `Navbar`, `AboutSection`, `ResumeSection`, `PortfolioSection`, `ContactSection`)
+- `src/data/portfolio.ts` — Structured portfolio data, projects, skills, testimonials, and experience
+- `public/images/` — Static images and project showcase previews
