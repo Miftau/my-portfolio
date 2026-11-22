@@ -180,7 +180,7 @@ export const CLIENTS: ClientItem[] = [
   {
     name: "Progress ICT",
     logo: "/images/Progress logo.jpg",
-    url: "https://pimconcepts.com.ng",
+    url: "https://progressict.com.ng",
   },
 ];
 
@@ -449,64 +449,24 @@ export const PROJECTS: ProjectItem[] = [
     ],
   },
   {
-    id: "pim-concepts",
+    id: "progress-ict",
     title: "Website Agency",
-    subtitle: "Digital Agency & ICT Solutions Showcase",
+    subtitle: "Progress ICT — Digital Agency & Web Solutions",
     category: "Web Development",
-    url: "https://pimconcepts.com.ng",
+    url: "https://progressict.com.ng",
     ctaLabel: "Visit Website",
     image: "/images/Screenshot 2023-10-04 204345.png",
     imageAlt: "Progress-ICT Website Agency preview",
     summary:
-      "Modern agency storefront for PIM Concepts highlighting web engineering, branding, and digital transformation services for growing businesses.",
+      "Modern agency storefront for Progress ICT highlighting web engineering, branding, and digital transformation services for growing businesses.",
     description:
-      "A clean, conversion-driven agency web platform designed to showcase digital services, client case studies, and consultation pathways for small-to-medium enterprises seeking dependable web and ICT execution.",
+      "A clean, conversion-driven agency web platform built for Progress ICT to showcase digital services, client case studies, and consultation pathways for organizations seeking dependable web and ICT execution.",
     highlights: [
       "Service showcase tailored to web design, software development, and brand strategy",
       "Responsive layout engineered for fast loading across desktop and mobile",
       "Streamlined lead-capture and client inquiry flows",
     ],
     tags: ["Agency Web", "Responsive UI", "Lead Generation"],
-  },
-  {
-    id: "whis-school",
-    title: "WHIS School Website",
-    subtitle: "Wisdom House Islamic School Portal",
-    category: "Web Development",
-    url: "https://whischool.com",
-    ctaLabel: "Visit Website",
-    image: "/images/whis-screen.png",
-    imageAlt: "Wisdom House Islamic School website preview",
-    summary:
-      "Institutional school web portal featuring admissions workflows, academic classes, events, and parent-facing communications.",
-    description:
-      "Developed and administered for Wisdom House Islamic School, providing prospective parents and current families with clear visibility into admissions, curriculum structure, campus galleries, and academic announcements.",
-    highlights: [
-      "Dedicated admissions information, class directory, and school event calendar",
-      "Photo gallery and news blog for parent community engagement",
-      "Ongoing technical administration and performance optimization",
-    ],
-    tags: ["Education Portal", "Web Administration", "CMS"],
-  },
-  {
-    id: "ad-dars",
-    title: "AD-DARS Website",
-    subtitle: "Online Learning & Academic Platform",
-    category: "Web Development",
-    url: "https://ad-dars.com",
-    ctaLabel: "Visit Website",
-    image: "/images/ad-dars.png",
-    imageAlt: "AD-DARS Academy website preview",
-    summary:
-      "Custom educational academy website crafted from concept to launch with intuitive course presentation and student onboarding.",
-    description:
-      "Designed and developed for AD-DARS Academy to translate their educational vision into an engaging, accessible online presence that simplifies program discovery and student enrollment.",
-    highlights: [
-      "Original brand-aligned layout crafted directly from founder discovery sessions",
-      "Clear program structure and responsive student enrollment pathways",
-      "Optimized typography and mobile usability for international learners",
-    ],
-    tags: ["Education Web", "UI/UX Design", "Responsive Build"],
   },
   {
     id: "ai-article-humanizer",
