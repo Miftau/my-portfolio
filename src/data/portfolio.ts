@@ -14,6 +14,13 @@ export interface ServiceItem {
   iconAlt: string;
 }
 
+export interface ValueItem {
+  id: string;
+  title: string;
+  description: string;
+  icon: "compass" | "handshake" | "shield" | "progress";
+}
+
 export interface TestimonialItem {
   id: string;
   name: string;
@@ -32,14 +39,22 @@ export interface ClientItem {
 
 export interface TimelineEntry {
   title: string;
+  organization?: string;
   period: string;
-  label: string;
-  detail: string;
+  label?: string;
+  detail?: string;
+  highlights?: string[];
 }
 
-export interface SkillEntry {
-  name: string;
-  level: number;
+export interface CertificationEntry {
+  title: string;
+  issuer?: string;
+  year: string;
+}
+
+export interface SkillGroup {
+  category: string;
+  skills: string[];
 }
 
 export interface ProjectItem {
@@ -61,7 +76,7 @@ export interface ProjectItem {
 export const PROFILE = {
   name: "Yusuf Muftaudeen",
   displayName: "YUSUF MUFTAUDEEN (DEV. PROGRESS)",
-  role: "Software Engineer",
+  role: "AI Engineer & Full-Stack Developer",
   avatar: "/images/progress2.png",
   email: "muftaudeenyusufbabatunde@gmail.com",
   phoneDisplay: "+234 (0) 704 581 9352",
@@ -84,39 +99,71 @@ export const PROFILE = {
     },
   ],
   aboutParagraphs: [
-    "I'm a Creative Director and Full-Stack Software Engineer from Ibadan, Nigeria, specializing in building scalable web platforms, SaaS systems, AI-powered tools, and mobile applications. I enjoy turning complex operational challenges into simple, intuitive, high-impact digital products.",
-    "My focus is delivering software that is both deeply functional and visually refined—combining clean architecture, responsive user experience, and dependable performance. From healthcare and biotech platforms to cybersecurity sandboxes, cloud infrastructure, and educational academies, I partner with ambitious organizations to bring their vision to life.",
+    "I am a results-driven AI Engineer, Full-Stack Developer, and Chief Technical Officer with 6+ years of experience architecting scalable, intelligent web and mobile applications across Nigeria, Qatar, and the UK. My engineering work blends machine learning classification, real-time data preprocessing pipelines, LLM integration, and computer vision foundations with resilient production backends in Python (Django, Flask), Node.js, and Java Spring Boot.",
+    "Beyond technical depth, I believe meaningful engineering begins with deep listening, clear architecture, and real accountability. Whether leading enterprise technical strategy at MODINS, mentoring future defenders as a Cyber Security Instructor, or building high-throughput fraud detection systems and AI virtual labs, I focus on translating complex operational challenges into secure, user-centric products built to endure.",
+    "Guided by integrity, craftsmanship, and continuous progress—and strengthened by an interdisciplinary foundation in Computer Science and Microbiology—I treat every engagement as a long-term partnership dedicated to measurable performance, security, and real-world impact.",
   ],
 } as const;
 
+export const PROFESSIONAL_VALUES: ValueItem[] = [
+  {
+    id: "purpose",
+    title: "Purpose-Driven Engineering",
+    description:
+      "Every architectural choice serves a clear human or business outcome—prioritizing usefulness, clarity, and real impact over unnecessary complexity.",
+    icon: "compass",
+  },
+  {
+    id: "empathy",
+    title: "Client Empathy & Transparency",
+    description:
+      "Listening closely, asking the right questions, and communicating openly from initial discovery through launch and long-term iteration.",
+    icon: "handshake",
+  },
+  {
+    id: "craft",
+    title: "Craftsmanship & Reliability",
+    description:
+      "Writing maintainable code and designing polished, resilient products that perform dependably at scale and honor every deadline.",
+    icon: "shield",
+  },
+  {
+    id: "progress",
+    title: "Continuous Progress",
+    description:
+      "Staying grounded in fundamentals while advancing with modern full-stack, cloud, and AI practices so every client benefits from forward-looking solutions.",
+    icon: "progress",
+  },
+];
+
 export const SERVICES: ServiceItem[] = [
   {
-    title: "Web Design",
+    title: "AI & Machine Learning",
     description:
-      "Modern, conversion-focused interfaces crafted with precision, accessibility, and strong visual identity.",
+      "End-to-end LLM integrations, ML classification, fraud detection architectures, data preprocessing pipelines, and MLOps workflows.",
     icon: "/images/icon-design.svg",
-    iconAlt: "Web design icon",
+    iconAlt: "AI and machine learning icon",
   },
   {
-    title: "Web Development",
+    title: "Full-Stack Web Engineering",
     description:
-      "Full-stack web applications and cloud SaaS platforms built with Next.js, TypeScript, and scalable APIs.",
+      "Scalable web platforms and APIs engineered with Next.js, React, TypeScript, Python (Django/Flask), Node.js, and Java Spring Boot.",
     icon: "/images/icon-dev.svg",
-    iconAlt: "Web development icon",
+    iconAlt: "Full-stack web development icon",
   },
   {
-    title: "Mobile Apps",
+    title: "Cross-Platform Mobile Apps",
     description:
-      "Production-grade Android and cross-platform mobile applications engineered for speed and real-world reliability.",
+      "High-performance mobile applications built with React Native, real-time WebSockets, GPS capabilities, and seamless API synchronization.",
     icon: "/images/icon-app.svg",
-    iconAlt: "Mobile app icon",
+    iconAlt: "Mobile app development icon",
   },
   {
-    title: "Software Development",
+    title: "Cloud, DevOps & Security",
     description:
-      "Custom end-to-end software systems, AI workflows, and interactive platforms tailored to complex business needs.",
+      "AWS cloud data strategy, CI/CD automation, penetration testing, security governance, and custom analytics dashboards.",
     icon: "/images/icon-dev.svg",
-    iconAlt: "Software development icon",
+    iconAlt: "Cloud and security engineering icon",
   },
 ];
 
@@ -186,61 +233,138 @@ export const CLIENTS: ClientItem[] = [
 
 export const EDUCATION: TimelineEntry[] = [
   {
-    title: "University of the People",
-    period: "2021 — Present",
-    label: "Course:",
-    detail: "BSc. Computer Science",
+    title: "B.Sc. in Computer Science",
+    organization: "University of the People",
+    period: "2021 — 2027",
   },
   {
-    title: "ALX Full-Stack Development",
-    period: "2022 — 2023",
-    label: "Course:",
-    detail: "Full-Stack Software Engineering with Python",
+    title: "B.Sc. in Microbiology",
+    organization: "University of Ilorin",
+    period: "2021 — 2026",
   },
   {
-    title: "New Horizon Computer Learning Center",
-    period: "2020 — 2021",
-    label: "Course:",
-    detail: "Diploma in Web Development",
+    title: "Diploma in Web Development",
+    organization: "New Horizon Computer Learning Center, Nigeria",
+    period: "2012",
   },
 ];
 
 export const EXPERIENCE: TimelineEntry[] = [
   {
-    title: "WISDOM HOUSE ISLAMIC SCHOOL, NG",
-    period: "2023 — Present",
-    label: "Position:",
-    detail: "Web Developer and Administrator",
+    title: "Chief Technical Officer",
+    organization: "MODINS NIG. LTD — Nigeria",
+    period: "March 2026 — Present",
+    highlights: [
+      "Direct enterprise-wide technical strategy, system architecture, and product roadmaps across proprietary clinical systems and educational management platforms.",
+      "Lead engineering teams in architecting scalable full-stack web and mobile applications integrated with secure APIs, automated data workflows, and robust cloud deployments.",
+      "Establish engineering standards, CI/CD pipelines, and data security governance to ensure compliance, high availability, and optimal software performance.",
+    ],
   },
   {
-    title: "DAARU-L-ILM ISLAMIC STUDIES, UK",
-    period: "2020 — Present",
-    label: "Position:",
-    detail: "Chief Technical Officer (CTO)",
+    title: "Cyber Security Instructor",
+    organization: "TECHEND STEM — Oyo, Nigeria",
+    period: "2024 — Present",
+    highlights: [
+      "Design and deliver comprehensive curricula covering cybersecurity fundamentals, network defense protocols, and penetration testing methodologies.",
+      "Facilitate hands-on lab environments covering ethical hacking, vulnerability assessments, secure coding practices, and threat analysis.",
+    ],
   },
   {
-    title: "CITADEL OF KNOWLEDGE, UK",
-    period: "2018 — 2020",
-    label: "Position:",
-    detail: "Website Developer & Administrator",
+    title: "Senior AI & Full-Stack Developer (Contract)",
+    organization: "Triple A HOLDING — Qatar (Remote)",
+    period: "December 2021 — 2024",
+    highlights: [
+      "Co-led the architectural design and deployment of predictive models and machine learning classification systems integrated directly into enterprise web platforms.",
+      "Built high-throughput Python (Flask/Django) data preprocessing pipelines to clean and transform multi-source streams for real-time fraud detection architectures.",
+      "Engineered responsive React and Next.js interfaces and real-time WebSocket data streaming to monitor model performance post-deployment.",
+      "Conducted deep performance profiling and frontend refactoring, reducing page load times by 40% across data-heavy workflows.",
+    ],
   },
   {
-    title: "OXFORD AFRICA LTD, NIGERIA",
-    period: "2015 — 2018",
-    label: "Position:",
-    detail: "Graphics Designer",
+    title: "AI & Full-Stack Developer",
+    organization: "DAARU-L-ILM ISLAMIC STUDIES — Luton, UK (Remote)",
+    period: "May 2018 — Present",
+    highlights: [
+      "Architected custom school management application modules, including automated dynamic ID card generation and smart institutional portals.",
+      "Designed an interactive custom admin dashboard with advanced data visualizations translating platform analytics into actionable business intelligence.",
+      "Partnered with Product Management to define technical requirements and data architectures, driving a 20% increase in sprint development efficiency.",
+      "Led Agile sprint planning, stand-ups, and continuous delivery with adaptive cross-device interfaces and reliable API synchronization.",
+    ],
   },
 ];
 
-export const SKILLS: SkillEntry[] = [
-  { name: "Web Design & UI Architecture", level: 90 },
-  { name: "Full-Stack & Next.js Development", level: 95 },
-  { name: "Server-Side Development & APIs", level: 95 },
-  { name: "Database Engineering", level: 95 },
-  { name: "WordPress & CMS Platforms", level: 95 },
-  { name: "Graphic Design & Branding", level: 85 },
-  { name: "Teamwork & Technical Leadership", level: 95 },
-  { name: "Client Communication", level: 90 },
+export const CERTIFICATIONS: CertificationEntry[] = [
+  {
+    title: "AWS AI Scholar",
+    issuer: "Amazon Web Services",
+    year: "2025",
+  },
+  {
+    title: "Certified AWS Data Strategist",
+    issuer: "Amazon Web Services",
+    year: "2020",
+  },
+  {
+    title: "ALX Fullstack Development Graduate",
+    issuer: "ALX Africa",
+    year: "2021",
+  },
+  {
+    title: "ALX JavaScript Foundation",
+    issuer: "Udacity",
+    year: "2019",
+  },
+];
+
+export const SKILL_GROUPS: SkillGroup[] = [
+  {
+    category: "Artificial Intelligence & ML",
+    skills: [
+      "Machine Learning Classification",
+      "Data Preprocessing Pipelines",
+      "Fraud Detection Architectures",
+      "LLM Integration",
+      "Predictive Modeling",
+      "Computer Vision Foundations",
+      "MLOps Workflows",
+    ],
+  },
+  {
+    category: "Backend & Data Engineering",
+    skills: [
+      "Python (Django, Flask)",
+      "Node.js & Express",
+      "Java (Spring Boot)",
+      "MySQL",
+      "RESTful APIs",
+      "WebSockets",
+      "Cloud Data Strategy",
+    ],
+  },
+  {
+    category: "Frontend & Mobile Development",
+    skills: [
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "React Native",
+      "HTML5 & CSS3",
+      "Tailwind CSS",
+      "Performance Optimization",
+    ],
+  },
+  {
+    category: "Tools, DevOps & Security",
+    skills: [
+      "Amazon Web Services (AWS)",
+      "Git / GitLab Workflows",
+      "CI/CD Pipelines",
+      "Test-Driven Development (TDD)",
+      "Penetration Testing",
+      "Admin Dashboards & Data Viz",
+    ],
+  },
 ];
 
 export const PROJECT_CATEGORIES: ProjectFilterCategory[] = [
@@ -434,18 +558,18 @@ export const PROJECTS: ProjectItem[] = [
     summary:
       "Global academic platform for the Luton, UK academy delivering structured, scholar-led Quranic and Islamic studies through online and in-person instruction.",
     description:
-      "Serving learners locally in Luton, UK and internationally, Daaru-l-Ilm pairs authentic, scholar-led Islamic scholarship with a seamless modern digital learning experience. As Chief Technical Officer, I oversee the academy's web ecosystem supporting tiered curriculum enrollment, live online classrooms, and personalized private instruction.",
+      "Serving learners locally in Luton, UK and internationally, Daaru-l-Ilm pairs authentic, scholar-led Islamic scholarship with a seamless modern digital learning experience. As AI & Full-Stack Developer since 2018, I architected custom school management modules, dynamic ID card generation, smart institutional portals, and an interactive analytics dashboard supporting tiered enrollment and hybrid classrooms.",
     highlights: [
       "Tiered academic progression spanning Foundation (Temhidiyah), Intermediate (Ibtidaaiyah), and Advanced (Idaadiyah) levels",
       "Core disciplines in Quranic recitation (Tajweed), systematic Hifz memorization, Fiqh, Hadith, and Arabic grammar (Nahw & Sarf)",
-      "Hybrid instructional delivery bridging Luton in-person cohorts and global online students",
-      "Bespoke 1-on-1 private tuition pathways with dedicated student support",
+      "Custom institutional portal modules including automated dynamic ID card generation and interactive admin analytics dashboards",
+      "Hybrid instructional delivery bridging Luton in-person cohorts, global online classes, and bespoke 1-on-1 private tuition",
     ],
     tags: [
       "EdTech Academy",
-      "Online & Hybrid LMS",
+      "Custom LMS & Analytics",
       "UK Institution",
-      "CTO Leadership",
+      "AI & Full-Stack",
     ],
   },
   {

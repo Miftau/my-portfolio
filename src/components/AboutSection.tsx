@@ -1,14 +1,35 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
+import {
+  Compass,
+  HeartHandshake,
+  ShieldCheck,
+  TrendingUp,
+  X,
+} from "lucide-react";
 import {
   CLIENTS,
+  PROFESSIONAL_VALUES,
   PROFILE,
   SERVICES,
   TESTIMONIALS,
   type TestimonialItem,
+  type ValueItem,
 } from "@/data/portfolio";
+
+function renderValueIcon(icon: ValueItem["icon"]) {
+  switch (icon) {
+    case "compass":
+      return <Compass size={19} aria-hidden="true" />;
+    case "handshake":
+      return <HeartHandshake size={19} aria-hidden="true" />;
+    case "shield":
+      return <ShieldCheck size={19} aria-hidden="true" />;
+    case "progress":
+      return <TrendingUp size={19} aria-hidden="true" />;
+  }
+}
 
 interface AboutSectionProps {
   active: boolean;
@@ -37,6 +58,25 @@ export default function AboutSection({ active }: AboutSectionProps) {
         {PROFILE.aboutParagraphs.map((paragraph, idx) => (
           <p key={idx}>{paragraph}</p>
         ))}
+      </section>
+
+      <section className="values">
+        <h3 className="h3 values-title">Core Values</h3>
+
+        <ul className="values-list">
+          {PROFESSIONAL_VALUES.map((value) => (
+            <li className="values-item" key={value.id}>
+              <div className="icon-box values-icon-box">
+                {renderValueIcon(value.icon)}
+              </div>
+
+              <div className="values-content-box">
+                <h4 className="h4 values-item-title">{value.title}</h4>
+                <p className="values-item-text">{value.description}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="service">

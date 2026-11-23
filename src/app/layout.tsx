@@ -10,16 +10,18 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Yusuf Muftaudeen (Dev. Progress) — Software Engineer & Portfolio",
+  title:
+    "Yusuf Muftaudeen (Dev. Progress) — AI Engineer & Full-Stack Developer",
   description:
-    "Personal portfolio of Yusuf Muftaudeen (Dev. Progress), Full-Stack Software Engineer and Creative Director building SaaS platforms, AI labs, mobile apps, and modern web systems.",
+    "Portfolio of Yusuf Muftaudeen (Dev. Progress) — Results-driven AI Engineer, Full-Stack Developer, and CTO with 6+ years building intelligent SaaS platforms, ML pipelines, LLM integrations, mobile apps, and cloud systems.",
   icons: {
     icon: "/images/LOGO.png",
   },
   openGraph: {
-    title: "Yusuf Muftaudeen (Dev. Progress) — Software Engineer",
+    title:
+      "Yusuf Muftaudeen (Dev. Progress) — AI Engineer & Full-Stack Developer",
     description:
-      "Full-Stack Software Engineer building high-impact SaaS platforms, AI labs, mobile apps, and cloud web experiences.",
+      "AI Engineer, Full-Stack Developer, and CTO with 6+ years architecting scalable AI, SaaS, mobile, and cloud platforms.",
     type: "website",
   },
 };
